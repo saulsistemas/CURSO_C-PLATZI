@@ -10,18 +10,33 @@ namespace POO
         {
             //INSTANCIAMOS
             var escuela = new Escuela("Saul",2021,TiposEscuela.PreEscolar,ciudad:"Chiclayo");
-            //OTRA MANERA DE INSTANCIAR
-            var curso1 = new Curso() { Nombre="C#",Jornada=TiposJornada.Tarde};
-            var curso2 = new Curso() { Nombre="c++",Jornada=TiposJornada.Manana};
-            var curso3 = new Curso() { Nombre="PHP",Jornada=TiposJornada.Noche};
+
+            //ARREGLOS
+            //int[] are = new int[2];
+            //AREGLO DE OBJETOS
+            var arregloCursos = new Curso[3];
+            //PRIMERA FORMA
+            arregloCursos[0]= new Curso() { Nombre = "c++",Jornada = TiposJornada.Manana}; 
+            arregloCursos[1]= new Curso() { Nombre = "c++",Jornada = TiposJornada.Tarde};
+            //SEGUNDA FORMA
+            arregloCursos[2] = new Curso();
+            arregloCursos[2].Nombre = "Saul";
+            arregloCursos[2].Jornada = TiposJornada.Noche;
 
             Console.WriteLine(escuela.ToString());
             Console.WriteLine("===========CURSOS==============");
-            Console.WriteLine(curso1.ToString());
-            Console.WriteLine(curso2.ToString());
-            Console.WriteLine(curso3.ToString());
+            imprimirCursos(arregloCursos);
+        }
 
-
+        private static void imprimirCursos(Curso[] arregloCursos)
+        {
+            int contador = 0;
+            //MIENTRAS SIGA SIENDO VERDADERO
+            while (contador<=arregloCursos.Length)
+            {
+                Console.WriteLine(arregloCursos[contador].Nombre +" "+arregloCursos[contador].Jornada);
+                contador++;
+            }
         }
     }
 }
