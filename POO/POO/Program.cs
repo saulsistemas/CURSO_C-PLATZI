@@ -25,10 +25,13 @@ namespace POO
 
             Console.WriteLine(escuela.ToString());
             Console.WriteLine("===========CURSOS==============");
-            imprimirCursos(arregloCursos);
+            //imprimirCursosWhile(arregloCursos);
+            //imprimirCursosDoWhile(arregloCursos);
+            //imprimirCursosFor(arregloCursos);
+            imprimirCursosForEach(arregloCursos);
         }
 
-        private static void imprimirCursos(Curso[] arregloCursos)
+        private static void imprimirCursosWhile(Curso[] arregloCursos)
         {
             int contador = 0;
             //MIENTRAS SIGA SIENDO VERDADERO
@@ -37,6 +40,32 @@ namespace POO
                 Console.WriteLine(arregloCursos[contador].Nombre +" "+arregloCursos[contador].Jornada);
                 contador++;
             }
+        }
+        private static void imprimirCursosDoWhile(Curso[] arreglo)
+        {
+            int contador = 0;
+            do
+            {
+                Console.WriteLine(arreglo[contador].Nombre + " " + arreglo[contador].Jornada);
+                contador++;
+            } while (contador <= arreglo.Length);
+            //MIENTRAS SIGA SIENDO VERDADERO
+        }
+        private static void imprimirCursosFor(Curso[] arreglo)
+        {
+            for (int i = 0; i < arreglo.Length; i++)
+            {
+                Console.WriteLine(arreglo[i].Nombre + " " + arreglo[i].Jornada);
+            }
+            
+        }
+        private static void imprimirCursosForEach(Curso[] arreglos)
+        {
+            foreach (var curso in arreglos)
+            {
+                Console.WriteLine(curso.Nombre + " " + curso.Jornada);
+            }
+
         }
     }
 }
