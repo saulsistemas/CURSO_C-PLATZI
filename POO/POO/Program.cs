@@ -9,10 +9,8 @@ namespace POO
         static void Main(string[] args)
         {
             //INSTANCIAMOS
-            var escuela = new Escuela("Saul",2021);
-            escuela.Pais = "Peru";
-            escuela.Ciudad = "Lima";
-            escuela.TipoEscuela = TiposEscuela.Primaria;
+            var escuela = new Escuela("Saul",2021,TiposEscuela.PreEscolar,ciudad:"Chiclayo");
+           
             Console.WriteLine(escuela.ToString());
 
         }
