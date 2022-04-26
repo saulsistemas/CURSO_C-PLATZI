@@ -11,7 +11,7 @@ namespace POO.Entidades
         public string Pais { get;set; }
         public string Ciudad { get; set; }
         public TiposEscuela TipoEscuela { get; set; }
-      
+        public Curso[] Curso { get; set; }
         public Escuela(string nombre, int anioCreacion)=> (Nombre,AnioCreacion)=(nombre,ValidarNumero(anioCreacion));
         //CONSTRUCTOR CON MAS PARAMETROS
         public Escuela(string nombre, int anioCreacio,
